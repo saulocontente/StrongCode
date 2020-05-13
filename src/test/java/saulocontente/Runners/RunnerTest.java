@@ -1,4 +1,4 @@
-package saulocontente.Runners;
+package saulocontente.runners;
 
 
 import org.junit.runner.RunWith;
