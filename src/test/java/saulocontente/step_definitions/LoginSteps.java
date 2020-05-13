@@ -23,8 +23,7 @@ public void enteredTheLogingInformations() {
 
 @Then("^i'm gonna be loggedin$")
 public void iMGonnaBeLoggedin() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+    
 }
 
 
