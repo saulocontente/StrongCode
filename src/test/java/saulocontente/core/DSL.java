@@ -3,6 +3,9 @@ package saulocontente.core;
 import static saulocontente.core.DriverFactory.getDriver;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DSL {
 
@@ -12,7 +15,7 @@ public class DSL {
 
     /*
     ============================Clear&Read&Write============================
-        methods to Clear/Write/Read contents of elements on screen.
+        methods to Clear/Write/Read attribute value of/to elements on screen.
     */
     public void clear(By by){
         getDriver().findElement(by).clear();
@@ -30,6 +33,27 @@ public class DSL {
     public void write(String idElement, String string){
         write(By.id(idElement), string);
     }
-    
 
+    /*
+    ============================Wait============================
+        methods to Wait until an Element is present on screen.
+    */
+    public void waitElement(By by){
+        WebDriverWait wait = new WebDriverWait(getDriver(), 15);
+        wait.until(ExpectedConditions.presenceOfElementLocated(by));
+    }
+    public void waitElement(String idElement){
+        waitElement(By.id(idElement));
+    }
+
+    /*
+    ============================get============================
+        methods to get contents of an Element on screen.
+    */
+    public String getText(By by){
+        return getDriver().findElement(by).getText();
+    }
+    public String getText(String id){
+        return getText(By.id(id));
+    }
 }

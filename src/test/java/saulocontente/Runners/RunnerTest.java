@@ -11,8 +11,10 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 @CucumberOptions(
     features = "src\\test\\java\\saulocontente\\step_definitions\\features\\LoginFeature.feature",
     glue = "saulocontente.step_definitions",
-    plugin = {"pretty", "html:report-html"},
-    snippets = SnippetType.CAMELCASE
+    plugin = {"pretty", "html:target/report-html"},
+    snippets = SnippetType.CAMELCASE,
+    strict = true,
+    dryRun = false
 )
 public class RunnerTest {
     
