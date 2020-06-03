@@ -8,23 +8,21 @@ import saulocontente.core.BasePage;
 public class LoginPage extends BasePage {
     
     public void setEmail(String string){
-        waitElement("email");
-        write("email", string);
+        waitPresenceOfElement("email", 15);
+        writeToElement("email", string);
     }
 
 	public void setPassword(String string) { 
-        waitElement("passwd");    
-        write("passwd", string);
+        waitPresenceOfElement("passwd",5);
+        writeToElement("passwd", string);
     }
     
     public void submitLogin(){
-        waitElement("SubmitLogin");
-        click(By.id("SubmitLogin"));
+        waitPresenceOfElement("SubmitLogin", 5).click();
     }
 
 
     public String errorAlert(){
-        waitElement(By.xpath("//div[@id='center_column']/div[@class = 'alert alert-danger']//li"));
-        return getText(By.xpath("//div[@id='center_column']/div[@class = 'alert alert-danger']//li"));
+        return waitPresenceOfElement(By.xpath("//div[@id='center_column']/div[@class = 'alert alert-danger']//li"), 20).getText();
     }
 }

@@ -12,6 +12,6 @@ public class IndexPage extends BasePage {
     }
 
     public void abrirLogin(){
-        click(By.xpath("//header//div/a[@class = 'login']"));
+        waitPresenceOfElement(By.xpath("//header//div/a[@class = 'login']"), 15).click();
     }
 }

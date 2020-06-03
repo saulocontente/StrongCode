@@ -6,7 +6,6 @@ import saulocontente.core.BasePage;
 
 public class AccountPage extends BasePage {
     public String accountName(){
-        waitElement(By.xpath("//div[@class = 'container']//a[@class = 'account']/span"));
-        return getText(By.xpath("//div[@class = 'container']//a[@class = 'account']/span"));
+        return waitPresenceOfElement(By.xpath("//div[@class = 'container']//a[@class = 'account']/span"),15).getText();
     }
 }
