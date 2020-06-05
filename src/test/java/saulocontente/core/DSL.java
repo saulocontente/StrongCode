@@ -1,11 +1,11 @@
 package saulocontente.core;
 
-import static saulocontente.core.DriverFactory.getDriver;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static saulocontente.core.DriverFactory.getDriver;
 
 public class DSL {
 
@@ -40,5 +40,13 @@ public class DSL {
 
     public WebElement waitPresenceOfElement(String idElemento, int timeout) {
         return waitPresenceOfElement(By.id(idElemento), timeout);
+    }
+
+    public void openURLonDriver(String url) {
+        getDriver().get(url);
+    }
+
+    public void closeDriver(){
+        DriverFactory.killDriver();
     }
 }
